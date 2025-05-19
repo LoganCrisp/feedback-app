@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build": "ng build --configuration production",
-    "start": "http-server dist/feedback-form-app -p 8080"
+    "start": "http-server dist/browser -p 8080"
   },
   "private": true,
   "dependencies": {
