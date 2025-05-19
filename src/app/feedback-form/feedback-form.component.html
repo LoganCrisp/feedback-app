@@ -1,0 +1,36 @@
+<h2>Submit Feedback</h2>
+
+<form (ngSubmit)="submitForm()" #feedbackForm="ngForm">
+  <label>Name:</label>
+  <input type="text" name="name" [(ngModel)]="formData.name" required />
+
+  <label>Email:</label>
+  <input type="email" name="email" [(ngModel)]="formData.email" required />
+
+  <label>Rating (1-5):</label>
+  <input
+    type="number"
+    name="rating"
+    [(ngModel)]="formData.rating"
+    min="1"
+    max="5"
+    required
+  />
+
+  <label>Comments:</label>
+  <textarea name="comments" [(ngModel)]="formData.comments"></textarea>
+
+  <button type="submit">Submit</button>
+</form>
+
+<hr />
+
+<h3>Submitted Feedback</h3>
+<ul>
+  <li *ngFor="let item of submittedData">
+    <strong>{{ item.name }}</strong> ({{ item.email }}) rated
+    {{ item.rating }}/5
+    <br />
+    <em>{{ item.comments }}</em>
+  </li>
+</ul>
